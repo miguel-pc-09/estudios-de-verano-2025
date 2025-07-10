@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner-miguel-perucha.png" alt="Miguel Ángel Perucha Banner" />
+  <img src="banner-miguel-perucha.png" alt="Miguel Ángel Perucha Banner"  width="100%" />
 </p>
 
 <h1 align="center">👋 ¡Hola! Soy Miguel Ángel Perucha Castelló</h1>
@@ -12,7 +12,7 @@
 
 ### 📂 Proyectos destacados
 
-- 🔧 [DAW-1--Proyectos](https://github.com/miguel-pc-09/DAW-1--Proyectos)  
+- 🔧 [DAW-1--Proyectos](https://github.com/miguel-pc-09/DAW-1--Proyectos)
 - 🛠️ [DAW-2--Proyectos](https://github.com/miguel-pc-09/DAW-2--Proyectos)
 
 ---
@@ -23,4 +23,4 @@
 
 ---
 
-⭐ *Gracias por visitar mi perfil. ¡Estoy disponible para aprender, colaborar y crecer profesionalmente!*
+⭐ _Gracias por visitar mi perfil. ¡Estoy disponible para aprender, colaborar y crecer profesionalmente!_
