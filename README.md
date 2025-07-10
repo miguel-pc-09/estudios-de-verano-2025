@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/miguel-pc-09/miguel-pc-09/main/banner-github.png" alt="Banner de Miguel Ángel Perucha" />
+  <img src="banner finalv1.png" alt="Miguel Ángel Perucha Banner" />
 </p>
 
 <h1 align="center">👋 ¡Hola! Soy Miguel Ángel Perucha Castelló</h1>
