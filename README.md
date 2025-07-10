@@ -1,16 +1,21 @@
-## Hi there 👋
+<p align="center">
+  <img src="https://raw.githubusercontent.com/miguel-pc-09/miguel-pc-09/main/banner-github.png" alt="Banner de Miguel Ángel Perucha" />
+</p>
 
-<!--
-**miguel-pc-09/miguel-pc-09** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<h1 align="center">👋 ¡Hola! Soy Miguel Ángel Perucha Castelló</h1>
 
-Here are some ideas to get you started:
+🎓 Estudiante de 2º DAW | 💻 Apasionado por el desarrollo web  
+🚀 Experiencia en Java, C#, HTML, CSS, JavaScript, MySQL y más  
+🌱 Siempre aprendiendo nuevas tecnologías
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+📂 Proyectos destacados:
+- [DAW-1--Proyectos](https://github.com/miguel-pc-09/DAW-1--Proyectos)
+- [DAW-2--Proyectos](https://github.com/miguel-pc-09/DAW-2--Proyectos)
+
+📫 Puedes contactarme o seguirme en:
+- 🔗 [GitHub](https://github.com/miguel-pc-09)
+  
+
+---
+
+⭐ *Gracias por visitar mi perfil. ¡Estoy disponible para aprender, colaborar y crecer profesionalmente!*
