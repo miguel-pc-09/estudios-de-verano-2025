@@ -1,5 +1,6 @@
-
-  <img src="banner-miguel-perucha.png" alt="Miguel Ángel Perucha Banner"  width="100%" />
+<p align="center">
+  <img src="https://raw.githubusercontent.com/miguel-pc-09/miguel-pc-09/main/banner-miguel-perucha.png" alt="Miguel Ángel Perucha Banner" width="100%" />
+</p>
 
 
 <h1 align="center">👋 ¡Hola! Soy Miguel Ángel Perucha Castelló</h1>
