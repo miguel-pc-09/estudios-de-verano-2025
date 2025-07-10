@@ -1,6 +1,6 @@
-<p align="center">
+
   <img src="banner-miguel-perucha.png" alt="Miguel Ángel Perucha Banner"  width="100%" />
-</p>
+
 
 <h1 align="center">👋 ¡Hola! Soy Miguel Ángel Perucha Castelló</h1>
 
