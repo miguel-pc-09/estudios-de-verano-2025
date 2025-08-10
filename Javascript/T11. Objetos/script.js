@@ -80,7 +80,7 @@ const vendedor = {
 		return this.nombre + " " + this.apellido;
 	}
 };
-
+                                           // CONSOLA
 console.log(vendedor.vender());            // Pedro ha vendido un auto
 console.log(vendedor.nombreCompleto());    // Pedro González
 console.log(vendedor.habilidadesBlandas);  // [ 'Carisma', 'Puntualidad' ]
