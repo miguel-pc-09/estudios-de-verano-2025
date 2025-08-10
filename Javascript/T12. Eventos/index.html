@@ -1,0 +1,56 @@
+<!-- EVENTOS
+
+Un evento en JavaScript es una acción o suceso que ocurre dentro de la página web.
+Puede ser desencadenado por el usuario (al hacer clic, arrastrar algo, escribir, etc.)
+o por el navegador (al terminar de cargar un recurso, al cerrar la página, etc.).
+
+Estos eventos pueden ser capturados por JavaScript para ejecutar distintas instrucciones
+y darle interactividad a la página, haciéndola mucho más atractiva.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>EVENTOS:</h1>
+    <p id="seleccionable"></p>
+
+           <!-- onclick: al hacer clic mostrará el mensaje definido en JavaScript -->
+<!-- <button onclick="mostrar()">CLÍCKEAME</button> --> 
+
+           <!-- onmouseover: al pasar el ratón por encima se activará -->
+<!-- <button onmouseover="mostrar()">Ponte encima mío</button> -->
+
+           <!-- onmouseout: se activará al salir del área del botón -->
+<!-- <button onmouseout="mostrar()">Ponte encima mío</button> -->
+
+<!-- onkeydown: se activará al presionar una tecla mientras el botón tiene el foco.
+              También puede ponerse en el <body> para escucharlo en toda la página:
+              <body onkeydown="mostrar()"> -->
+<!-- <button onkeydown="mostrar()">Ponte encima mío</button> -->
+
+           <!-- onload: ejecuta la función al cargar la página (se usa en <body>) -->
+<!-- <body onload="mostrar()"> -->
+
+           <!-- onchange: ejecuta la función al cambiar de opción en un select -->
+<select onchange="mostrar()">
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="JAVASCRIPT">JavaScript</option>
+    <option value="REACT">React</option>
+</select>
+  
+
+    <button onclick="mostrar()">CLÍCKEAME</button> <!-- AÑADIDO -->
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
