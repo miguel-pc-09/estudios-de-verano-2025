@@ -176,5 +176,38 @@ const array12 = [
 const resultado6 = array12.find(x => x.apellido == 'González')
 console.log(resultado6)
 // consola solo traera el primero que encuentra y para 
+// { nombre: 'Pedro', apellido: 'González' }
 
-// -------------------- 
+// -------------------- FINDINDEXOF ------------------------------------
+
+const array13 = ['Manzana','Manzana', 'Manzana', 'Manzana', 'Pera', 'Manzana','Pera']
+//                  0         1           2          3        4        5        6
+const resultado7 = array13.findIndex(x => x == 'Pera')
+console.log(resultado7)
+// consolsa -> 4 Busca el primero 
+
+//----------------------- SOME ---------------------------------------------
+
+const array14 = ['Manzana','Manzana', 'Manzana', 'Manzana', 'Pera', 'Manzana','Pera']
+//                  0         1           2          3        4        5        6
+//const array14 = ['Manzana','Manzana', 'Manzana', 'Manzana']  -> False 
+const resultado8 = array14.some(x => x == 'Pera')
+console.log(resultado8)
+// True
+
+//------------------------ EVERY ----------------------------------------
+const array15 = ['Manzana','Manzana', 'Manzana', 'Pera']
+const resultado9 = array15.every(x => x == 'Pera') // -> FALSE  ¿Son todas peras?
+
+// const array15 = ['Manzana','Manzana', 'Manzana', 'Manzana'] ¿Son todas Manzanas?
+// const resultado9 = array15.every(x => x == 'Manzana') // -> TRUE
+
+console.log(resultado9)
+
+// ------------------------- POP ----------------------------------------
+
+const array16 = ['Manzana','Naranja', 'Limón', 'Pera']
+const resultado10 = array16.pop()
+
+console.log(resultado10)  // PERA  -> Nos devuelve el que quito 
+console.log(array16)      // [ 'Manzana', 'Manzana', 'Manzana' ] -> Nos devuelve el array sin el ultimo 
