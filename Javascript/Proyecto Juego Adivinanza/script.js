@@ -1,12 +1,11 @@
-// Esto hace que floor redonde hacia abajo y el random siempre sea entre 1 y 100
-// Esta parte del juego selecciona un numero al azar para que adivines
+// Esto hace que floor redondea hacia abajo y el random siempre sea entre 1 y 100
+// Esta parte del juego selecciona un número al azar para que adivines
 let numeroAzar = Math.floor(Math.random()*100) +1    
 
 let numeroEntrada = document.getElementById('numeroEntrada')
 
-
 let mensaje = document.getElementById('mensaje')
-let intento= document.getElementById('intento')
+let intento = document.getElementById('intento')
 let intentos = 0
 
 // Esta acción se va a ejecutar cuando se toque el botón chequear
@@ -16,9 +15,9 @@ function chequearResultado (){
     let numeroIngresado = parseInt(numeroEntrada.value)
 
     if(numeroIngresado < 1 || numeroIngresado > 100 || isNaN(numeroIngresado)){
-        mensaje.textContent = 'Porfavor, introduce un número válido entre 1 y 100'
+        mensaje.textContent = 'Por favor, introduce un número válido entre 1 y 100'
         mensaje.style.color = 'black' ;
-        return                                                                       // Ponemos return para que corte aqui y no siga 
+        return                                                                       // Ponemos return para que corte aquí y no siga 
     }
 
     if(numeroIngresado === numeroAzar){
