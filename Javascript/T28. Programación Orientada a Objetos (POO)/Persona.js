@@ -11,33 +11,20 @@ class Persona {
         this.profesion = profesion
    }
 
-   // Comportamientos o Metodos: Otra funcion aparte del constructor
+   // Comportamientos o Métodos: otra función aparte del constructor
    
 }
 // De esta forma estamos instanciando un objeto basado en la clase plantilla        
-// Ahora con personas con nombres y mas caracteristicas: nombre, edad y profesion y las llamamos al log 
+// Ahora con personas con nombres y más características: nombre, edad y profesión, y las llamamos al log 
 const carolina = new Persona("Carolina", 35, "Astronauta")
 const ricardo = new Persona("Ricardo", 18, "Estudiante de Programación")
 
     // SET: Cambiar la información
-    // Si queremos modificar alguno de sus datos, en este ejemplo sus edades o profesion. Si el console lo ponemos antes del cambio pues no cambiaria 
+    // Si queremos modificar alguno de sus datos, en este ejemplo sus edades o profesión. Si el console lo ponemos antes del cambio, pues no cambiaría 
     carolina.edad = 45
     ricardo.profesion = "Estudiante de Artes" 
 
 // GET: obtención de datos
-console.log(carolina.edad)       // La edad si cambio a 45 
-console.log(ricardo.profesion)   // La profesion cambio a Estudiante de Artes 
-
-
-
-
-
-    
-    
-        
-
-
-
-
- 
+console.log(carolina.edad)       // La edad sí cambió a 45 
+console.log(ricardo.profesion)   // La profesión cambió a Estudiante de Artes 
 
