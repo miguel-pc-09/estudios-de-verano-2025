@@ -1,4 +1,4 @@
-// Clase ABSTRACTA Maquina de Café
+// Clase ABSTRACTA Maquina de Café. ** En javascript no existe como en java ** 
 class MaquinaDeCafe{
     constructor(){
         if(new.target === MaquinaDeCafe){
@@ -12,7 +12,7 @@ class MaquinaDeCafe{
     }
 
     prepararBebida(){
-        console.log("Preparando el brevaje")
+        console.log("Preparando el brebaje")
     }
 
     servirBebida(){
