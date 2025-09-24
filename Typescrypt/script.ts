@@ -1,0 +1,1 @@
+console.log('HOLA MUNDO mi primer programa Typescript ')
