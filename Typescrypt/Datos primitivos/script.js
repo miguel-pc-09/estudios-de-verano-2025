@@ -72,3 +72,98 @@ var arregloTexto = ['html', 'CSS', 'JS'];
 // Ahora si hacemos lo siguiente nos dara los metodos de number o string dependiendo del caso
 // arreglo[0]."Aqui mostrara los metodos"
 arregloTexto[0].indexOf('html');
+// ----- OBJETOS --------------------------
+// Basicamente sería, en javascript. typescript si señalas programador te dira el tipo de tipado que tiene cada uno
+var programador = {
+    nombre: 'Miguel',
+    tecnologias: ['React', 'Angular', 'JS'],
+    tomaAgua: true
+};
+// Queremos sobre escribi al pioner esto: programador = {} comienza a dar error, pero...
+programador = {
+    // añadimos datos del objeto 
+    nombre: 'Ricardo',
+    tecnologias: ['C#'],
+    // Otro dato si en vez de false o true en este, lo modificamos por un string, nos dara un error, 
+    // porque el primero creado esta diciendo que eso es un boolean
+    // En cambio si cambiasemos el nombre del objeto por programador2 o otra cosa no abría ningún problema 
+    tomaAgua: false
+    // poniendo los 3 como antes y cambiando lo de dentro ya no da fallo 
+};
+// ¿Y que saldra en console.log?
+console.log(programador);
+// Ahora nos dejara typar este 
+var alumno = {
+    nombre: 'Miguel',
+    tecnologias: ['React', 'Angular', 'JS'],
+    tomaAgua: true
+};
+// Que ocurre si creamos otro con otros datos
+var alumno2 = {
+    nombre: 'Federico',
+    tecnologias: ['HTML', 'CSS']
+    // Pero toma agua no lo se o no quiero ponerlo. Para solucionar esto añadimos ? a tomar agua 
+};
+var dev = {
+    nombre: 'Miguel',
+    tecnologias: ['React', 'Angular', 'JS'],
+    tomaAgua: true
+};
+// Aunque quitemos :Trabajador y añadamos mas cosas, y lo llamemos funcionara. En el momento que eliminemos por ejemplo nombre salta error
+// Si en la funcion intentamos poner trabajador.apellido, saltaria error. Y si ponemos Type en vez de interface, no daria error
+var dev2 = {
+    nombre: 'fede',
+    tecnologias: ['HTML', 'CSS'],
+    tomaAgua: null,
+    apellido: 'Valverde',
+    recibido: false
+};
+// recibe un trabajador de tipo Trabajador
+function enviarCurriculum(trabajador) {
+    console.log("Este Curriculum es de ".concat(trabajador.nombre));
+}
+enviarCurriculum(dev2);
+// ---------- CLASES Y POO -----------------------------
+var Pelicula = /** @class */ (function () {
+    // Crearemos constructor para que rellene los datos que tiene por defecto 
+    function Pelicula(nombre, protagonistas, actores) {
+        this.nombre = nombre,
+            this.protagonistas = protagonistas,
+            this.actores = actores;
+    }
+    // Puede tener metodos
+    Pelicula.prototype.proyectarEnCine = function () {
+        console.log("".concat(this.nombre, " est\u00E1 siendo proyectada"));
+        // Al nombre le ponemos ahora un nombre por defecto
+    };
+    return Pelicula;
+}());
+// Aqui estamos instanciando las peliculas basandonos en el modelo de la clase 
+var pelicula = new Pelicula('Barbie', ['Barbie', 'Ken'], ['Margot Robbie', 'Ryan Gosling']);
+var pelicula2 = new Pelicula('Oppenheimer', ['Oppenheimer', 'Straus'], ['Cillian Murphy', 'Robert Downey Jr.']);
+pelicula2.proyectarEnCine();
+console.log(pelicula2);
+// const pelicula = new Pelicula
+// pelicula.proyectarEnCine()
+// ------------ ENCAPSULAMIENTO Y GENÉRICOS -----------------------------------------------
+var Sorteo = /** @class */ (function () {
+    // Generamos un constructor para ver a quien le tocara el nombre
+    function Sorteo(nombre) {
+        this.nombre = nombre;
+    }
+    // Para crear los Getter y Setter, usaremos las palabras Get y Set antes del nombre del atributo
+    Sorteo.prototype.setTicket = function (ticket) {
+        this.ticket = ticket;
+    };
+    Sorteo.prototype.getTicket = function () {
+        return this.ticket;
+    };
+    // Método sortear que devolvera un string 
+    Sorteo.prototype.sortear = function () {
+        return "Para ".concat(this.nombre, " el ticket es ").concat(this.ticket);
+    };
+    return Sorteo;
+}());
+var sorteo = new Sorteo('Miguel Ángel');
+sorteo.setTicket('A7');
+console.log(sorteo.sortear());

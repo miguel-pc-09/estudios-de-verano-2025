@@ -84,3 +84,139 @@ let arregloTexto: string[] = ['html', 'CSS', 'JS']
 // Ahora si hacemos lo siguiente nos dara los metodos de number o string dependiendo del caso
 // arreglo[0]."Aqui mostrara los metodos"
 arregloTexto[0].indexOf('html')
+
+// ----- OBJETOS --------------------------
+// Basicamente sería, en javascript. typescript si señalas programador te dira el tipo de tipado que tiene cada uno
+let programador = {
+    nombre: 'Miguel',
+    tecnologias: ['React', 'Angular', 'JS'],
+    tomaAgua: true
+}
+// Queremos sobre escribi al pioner esto: programador = {} comienza a dar error, pero...
+programador = {
+    // añadimos datos del objeto 
+    nombre: 'Ricardo',
+    tecnologias:['C#'],
+    // Otro dato si en vez de false o true en este, lo modificamos por un string, nos dara un error, 
+    // porque el primero creado esta diciendo que eso es un boolean
+    // En cambio si cambiasemos el nombre del objeto por programador2 o otra cosa no abría ningún problema 
+    tomaAgua: false
+    // poniendo los 3 como antes y cambiando lo de dentro ya no da fallo 
+}
+// ¿Y que saldra en console.log?
+console.log(programador)
+/*
+Object
+    nombre: "Ricardo"
+    tecnologias: ['C#']
+    tomaAgua: false
+    [[Prototype]]: Object
+*/
+
+// ------ TYPE ------------
+// Lo primero poner nombre, y en MAY la 1º = que Clases, Interfaces. Aqui se pone = , despues {KYS o claves va a tener tipo dato van a ser}
+type Alumno = {
+    // En el caso de hacer el tipado de lo de abajo..
+    nombre: string,
+    tecnologias: string[],
+    // En el caso que el backend nos mande un null podemos poner |
+    tomaAgua?: boolean | null
+}
+// Ahora nos dejara typar este 
+let alumno: Alumno = {
+    nombre: 'Miguel',
+    tecnologias: ['React', 'Angular', 'JS'],
+    tomaAgua: true
+}
+// Que ocurre si creamos otro con otros datos
+let alumno2: Alumno = {
+    nombre: 'Federico',
+    tecnologias: ['HTML', 'CSS']
+    // Pero toma agua no lo se o no quiero ponerlo. Para solucionar esto añadimos ? a tomar agua 
+}
+
+// ---------- INTERFACE --------------
+// En vez alumno a trabajador
+
+interface Trabajador {
+    nombre: string,
+    tecnologias: string[],
+    tomaAgua: boolean | null
+}
+let dev: Trabajador = {
+    nombre: 'Miguel',
+    tecnologias: ['React', 'Angular', 'JS'],
+    tomaAgua: true
+}
+// Aunque quitemos :Trabajador y añadamos mas cosas, y lo llamemos funcionara. En el momento que eliminemos por ejemplo nombre salta error
+// Si en la funcion intentamos poner trabajador.apellido, saltaria error. Y si ponemos Type en vez de interface, no daria error
+let dev2 = {
+    nombre: 'fede',
+    tecnologias: ['HTML', 'CSS'],
+    tomaAgua: null,
+    apellido: 'Valverde',
+    recibido: false
+}
+// recibe un trabajador de tipo Trabajador
+function enviarCurriculum(trabajador: Trabajador){
+    console.log(`Este Curriculum es de ${trabajador.nombre}`)
+}
+enviarCurriculum(dev2)
+
+// ---------- CLASES Y POO -----------------------------
+
+class Pelicula{
+    // Para no de error por no inicializar le ponemos ? .Si no tendriamos que poner 
+    // nombre: string = 'Vacio o incializado';
+    nombre?: string ;
+    protagonistas?: string[];
+    actores?: string[];
+    
+    // Puede tener metodos
+    proyectarEnCine(){
+        console.log(`${this.nombre} está siendo proyectada`)
+        // Al nombre le ponemos ahora un nombre por defecto
+    }
+    // Crearemos constructor para que rellene los datos que tiene por defecto 
+    constructor(nombre:string, protagonistas: string[], actores: string[]){
+        this.nombre = nombre, 
+        this.protagonistas = protagonistas,
+        this.actores = actores
+    }
+
+}
+// Aqui estamos instanciando las peliculas basandonos en el modelo de la clase 
+const pelicula = new Pelicula('Barbie', ['Barbie', 'Ken'], ['Margot Robbie', 'Ryan Gosling'])
+const pelicula2 = new Pelicula('Oppenheimer', ['Oppenheimer', 'Straus'], ['Cillian Murphy', 'Robert Downey Jr.'])
+pelicula2.proyectarEnCine()
+console.log(pelicula2)
+// const pelicula = new Pelicula
+// pelicula.proyectarEnCine()
+
+// ------------ ENCAPSULAMIENTO Y GENÉRICOS -----------------------------------------------
+
+class Sorteo<T>{
+    //              aqui va el generico, el que quiero desde afuera, para esto ponemos <T> en la clase
+    private ticket?: T;
+    // Generamos un constructor para ver a quien le tocara el nombre
+    constructor(
+        private nombre : string 
+    ){}
+
+    // Para crear los Getter y Setter, usaremos las palabras Get y Set antes del nombre del atributo
+
+    setTicket(ticket: T){
+        this.ticket = ticket
+    }
+    getTicket(){
+        return this.ticket
+    }
+    // Método sortear que devolvera un string 
+    public sortear() :string{
+        return `Para ${this.nombre} el ticket es ${this.ticket}`
+    } 
+}
+
+let sorteo = new Sorteo<string>('Miguel Ángel')
+sorteo.setTicket('A7')
+console.log(sorteo.sortear())
