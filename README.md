@@ -18,9 +18,14 @@
 
 ---
 
-### 📫 Puedes contactarme o seguirme en
+## 🔗 Repositorio Personal
 
-- 🔗 [GitHub](https://github.com/miguel-pc-09)
+Desarrollado por **Miguel Ángel Perucha Castelló**  
+- 📧 [m.peruchacastello@gmail.com](mailto:m.peruchacastello@gmail.com)
+- 🐙 [GitHub](https://github.com/miguel-pc-09)
+- <a href="https://www.linkedin.com/in/miguel-angel-perucha-castello" target="_blank">
+    <img src="./linkedin-icon-24.png" alt="LinkedIn" width="18" height="18" />&nbsp;LinkedIn
+  </a>
 
 ---
 
