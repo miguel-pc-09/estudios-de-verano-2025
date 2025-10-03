@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/miguel-pc-09/miguel-pc-09/main/banner-miguel-perucha.png" alt="Miguel Ángel Perucha Banner" width="100%" />
+  <img src="assets/banner-verano.png" alt="Estudios de Verano 2025" width="100%" />
 </p>
 
 
