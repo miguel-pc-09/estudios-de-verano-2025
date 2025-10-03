@@ -3,7 +3,7 @@
 </p>
 
 
-<h1 align="center">👋 ¡Hola! Soy Miguel Ángel Perucha Castelló</h1>
+<h1 align="center">Estudios de Verano 2025</h1>
 
 🎓 Estudiante de 2º DAW | 💻 Apasionado por el desarrollo web  
 🚀 Experiencia en **Java**, **C#**, **HTML**, **CSS**, **JavaScript**, **MySQL**, **Git**, **GitHub**, **Visual Studio Code**, **XAMPP**, **DBeaver**, **Cisco Packet Tracer**  
