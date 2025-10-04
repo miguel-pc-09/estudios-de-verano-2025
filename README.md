@@ -4,9 +4,8 @@
 
 <h1 align="center">Estudios de Verano 2025</h1>
 
-🎓 Estudiante de 2º DAW | 💻 Apasionado por el desarrollo web  
-🚀 Experiencia en **Java**, **C#**, **HTML**, **CSS**, **JavaScript**, **MySQL**, **Git**, **GitHub**, **Visual Studio Code**, **XAMPP**, **DBeaver**, **Cisco Packet Tracer**  
-🌱 Siempre aprendiendo nuevas tecnologías
+> ✍️ **Estudios y aprendizajes que estoy haciendo durante el verano.**  
+> Me centro en reforzar la base web y la lógica de programación con ejercicios cortos
 
 ---
 
