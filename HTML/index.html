@@ -13,6 +13,7 @@
       name="description"
       content="Portfolio de Miguel Ángel, estudiante de DAW 2º año"
     />
+
     <!-- OPEN GRAPH: Es un conjunto de etiquetas que creó Facebook para que, cuando compartes un contenido, se vea bien. En content podemos poner lo mismo del título u otro más corto. Si no se pone, lo toma por defecto del title -->
     <meta property="og:title" content="Portfolio de un estudiante" />
     <meta property="og:description" content="Portfolio de un estudiante" />
@@ -33,9 +34,69 @@
       href="/images/Foto carne recorte word.jpg"
     />
     <!-- Style si queremos dar estilo -->
+    <!--
     <style>
       body {
         background: rgb(111, 179, 225);
+      }
+    </style>-->
+
+    <!--Partes del lenguaje del css-->
+    <style>
+      /*1º SELECTOR(etiqueta html): Es donde seleccionamos el lemento que queremos estilar. Lo malo de poner h1 cogeria todos los h1*/
+      h1 {
+        /*Dentro pondriamos la PROPIEDAD: VALOR; y se le llama declaración
+        color: black;  dentro del style se pueden crear estos comentarios 
+        color: rgba(0, 0, 0, 50%); Negro con opacidad LEGACY
+        nuevo forma
+        color: rgb(0 0 0 / 50%) 
+        color: hsl(348, 83%, 44%);
+        color: oklch(348 83% 44% / 50%);*/
+        color: #09f; /*sería lo mísmo #0099ff */
+        /*Border: nos permite dibujar un borde en el elemento, y estilos */
+        /*border-width: 3px;
+        border-style: solid;
+        border-color: #000;*/
+        font-family: monospace;
+      }
+      body {
+        background: #dbfbff;
+        /*Font-family: permite indicar la familia de la fuente.Poniendo systemui, carga todos. aun asi la fuente no hereda, podemos ir a h1 y que el tenga otro  */
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      /*Ahora los ancos pero añadimos class para que no todos sean iguales. Para las clases se pone .nombreClase */
+      .link {
+        color: red;
+      }
+      /*Seudoclase: nos ayuda controlar el estilo en su estado*/
+      .link:hover {
+        color: black;
+        /*border: 5px solid red;*/
+        /*outline es algo que no esta y no da ese efecto de salto */
+        outline: 3px solid red;
+      }
+      /*active: Se activa cuando un elemento esta activo, como cuando haces click*/
+      .link:active {
+        outline: 10px solid blue;
+      }
+      /*el focus por ejemplo en los input */
+      .link:focus {
+        border: 1px solid yellow;
+      }
+      /* Seudo clases en la lista tanto del primero como el ultimo tengan otro color. */
+      li:first-child {
+        color: pink;
+      }
+      li:last-child {
+        color: purple;
+      }
+      /*Pero tambien lo podemos hacer con los ID, ejemplo el de show. Para identificadores usamos #nombre */
+      #show {
+        background: #09f;
+        color: white;
+        border: 0;
       }
     </style>
   </head>
@@ -47,7 +108,7 @@
   <body>
     <header>
       <!-- h1 (etiqueta), Portfolio Miguel (elemento), etiqueta de cierre -->
-      <h1>Portfolio Miguel Ángel</h1>
+      <h1>Portfolio Miguel Ángel @👨‍💻</h1>
 
       <!-- Iframe: nos permite incrustar una página web, en este caso un vídeo de YouTube.
       En style, al ser vídeo de YouTube, metemos el aspecto 16/9 -->
@@ -66,10 +127,14 @@
       <!-- Nav: de navegación y etiqueta anchor que nos permite navegar, no solo afuera sino también dentro -->
       <nav>
         <!-- Enlaces internos. #: buscará el elemento que tiene el id de la palabra que le acompaña -->
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
+        <a class="link" href="#experiencia">Experiencia</a>
+        <a class="link" href="#proyectos">Proyectos</a>
         <!-- Enlaces externos. También podemos usar otros atributos como target; dentro metemos _blank para que abra otra página nueva. noreferrer: no va a enviar la cabecera por seguridad -->
-        <a href="https://twitch.tv/mapc" target="_blank" rel="noreferren"
+        <a
+          class="link"
+          href="https://twitch.tv/mapc"
+          target="_blank"
+          rel="noreferren"
           >Twitch</a
         >
       </nav>
@@ -107,7 +172,7 @@
       <!-- strong -> Conseguimos que lo que esté entre la apertura y cierre esté en negrita -->
       <!-- Párrafo, poner un texto -->
 
-      <p>
+      <p class="description">
         Estudiando <strong>Desarrollador de aplicaciones web</strong>, en la
         Universidad Europea de Madrid
       </p>
