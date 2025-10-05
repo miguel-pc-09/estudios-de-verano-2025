@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <!-- Head: Elemento donde meteremos metadatos, información extra, donde indicaremos qué tipo de archivos CSS cargar. No se va a renderizar -->
+  <head>
+    <!-- Codificación que debe utilizar -->
+    <meta charset="utf-8" />
+    <!-- Esto quiere decir que el sitio sea adaptable y que el ancho del contenido sea el ancho de la pantalla -->
+    <meta name="viewport" content="width=device-width" />
+    <!-- El título que va a tener nuestro documento (pestaña). MUY IMPORTANTE -->
+    <title>Portfolio</title>
+    <!-- Description: la descripción de nuestra página. Suele aparecer debajo del enlace. -->
+    <meta
+      name="description"
+      content="Portfolio de Miguel Ángel, estudiante de DAW 2º año"
+    />
+    <!-- OPEN GRAPH: Es un conjunto de etiquetas que creó Facebook para que, cuando compartes un contenido, se vea bien. En content podemos poner lo mismo del título u otro más corto. Si no se pone, lo toma por defecto del title -->
+    <meta property="og:title" content="Portfolio de un estudiante" />
+    <meta property="og:description" content="Portfolio de un estudiante" />
+    <meta property="og:image" content="/images/Foto carne recorte word.jpg" />
+    <meta property="og:image:alt" content="una foto carné de un estudiante" />
+    <!-- alternate: enlazar a un recurso externo. Imagina que tenemos la página en otro idioma y es la alternativa -->
+    <link rel="alternate" href="https://mapc.dev/en" hreflang="en-GB" />
+    <!-- Canonical: indicamos cuál es la página que realmente es la principal de nuestro sitio -->
+    <link rel="canonical" href="https://mapc.dev" />
+    <!-- robots: muy importante para Google y otros, donde debemos decirle si tiene que indexar la página y si tiene que seguir los enlaces -->
+    <meta name="robots" content="index, follow" />
+    <!-- theme-color: vamos a encontrarnos que hay un montón de metadatos que son para navegadores en concreto, y mete un color a la pestaña o a la zona de la barra superior -->
+    <meta name="theme-color" content="#09f" />
+    <!-- favicon, y se le pone link porque está enlazando a un recurso. Rel: la relación que tiene este enlace, qué tipo de imagen -->
+    <link
+      rel="icon"
+      type="image/jpg"
+      href="/images/Foto carne recorte word.jpg"
+    />
+    <!-- Style si queremos dar estilo -->
+    <style>
+      body {
+        background: rgb(111, 179, 225);
+      }
+    </style>
+  </head>
+  <!-- div: sirve para dividir el contenido.
+  2 etiquetas no semánticas en HTML: que simplemente sirven para agrupar, ya sea en línea o en bloque, el contenido.
+        span: para contenido en línea
+        div: para agrupar el contenido en bloque -->
+  <!-- Body -->
+  <body>
+    <header>
+      <!-- h1 (etiqueta), Portfolio Miguel (elemento), etiqueta de cierre -->
+      <h1>Portfolio Miguel Ángel</h1>
+
+      <!-- Iframe: nos permite incrustar una página web, en este caso un vídeo de YouTube.
+      En style, al ser vídeo de YouTube, metemos el aspecto 16/9 -->
+      <iframe
+        style="width: 100%; aspect-ratio: 16/9"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/3WOmfQi_kj8?si=p373oUxqwypSy2k3"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+
+      <!-- Nav: de navegación y etiqueta anchor que nos permite navegar, no solo afuera sino también dentro -->
+      <nav>
+        <!-- Enlaces internos. #: buscará el elemento que tiene el id de la palabra que le acompaña -->
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <!-- Enlaces externos. También podemos usar otros atributos como target; dentro metemos _blank para que abra otra página nueva. noreferrer: no va a enviar la cabecera por seguridad -->
+        <a href="https://twitch.tv/mapc" target="_blank" rel="noreferren"
+          >Twitch</a
+        >
+      </nav>
+    </header>
+
+    <!-- Dialog -->
+    <dialog id="dialog">
+      <h1>¿Sabías que puedes abrir una modal así?</h1>
+      <p>¡Y es totalmente nativo!</p>
+      <button id="hide">Cerrar modal</button>
+    </dialog>
+    <button id="show">Ver más información</button>
+    <!-- Utilizamos una etiqueta script para tenerlo cerca, aunque no es lo recomendado, pero se puede -->
+    <script>
+      window.show.addEventListener("click", () => {
+        window.dialog.showModal();
+      });
+
+      window.hide.addEventListener("click", () => {
+        window.dialog.close();
+      });
+    </script>
+
+    <!-- Etiqueta audio, igual que video. -->
+    <audio controls src="demo-html-audio.mp3"></audio>
+    <!-- Etiqueta de video: permite cargar vídeos // controls: pone los controles // autoplay: se pone automáticamente
+    // muted: para que no tenga sonido // loop: una vez termina, vuelve a empezar // poster="/image/yo.jpg": deja una imagen al comienzo -->
+    <video autoplay loop muted src="/demo-html-video.mp4"></video>
+
+    <!-- Main: solo puede existir uno, y es el que engloba el contenido principal de la página -->
+    <main>
+      <!-- h1, h2, h3, h4, h5, h5 -> título de más importante a menos importante, de más grande a más pequeño -->
+
+      <!-- Elementos anidados, es decir, dentro de los elementos vamos a poder tener otros elementos. -->
+      <!-- strong -> Conseguimos que lo que esté entre la apertura y cierre esté en negrita -->
+      <!-- Párrafo, poner un texto -->
+
+      <p>
+        Estudiando <strong>Desarrollador de aplicaciones web</strong>, en la
+        Universidad Europea de Madrid
+      </p>
+
+      <h2 id="experiencia">Experiencia</h2>
+
+      <!-- Lista desordenada (ul): unordered list, y en cada elemento usamos (li): list item, un elemento de la lista -->
+
+      <ul>
+        <li>Java</li>
+        <!-- Aunque quitemos la etiqueta de cierre no pasa nada, cosa que en XML sí. Aun así, no es recomendable -->
+        <li>JavaScript</li>
+        <!-- ul saca puntos -->
+        <li class="list-item">C#</li>
+        <li class="list-item">Python</li>
+        <li class="list-item">TypeScript</li>
+        <li class="list-item">MySQL</li>
+      </ul>
+
+      <!-- Elemento de reemplazo: normalmente no tienen etiquetas de cierre y apertura, como <img>. Creamos carpeta images -->
+      <!-- Con los anchor también podemos hacer que la gente descargue la foto, por ejemplo, que sea clicable. Y con download. Solo con recursos nuestros. -->
+      <a download href="/images/Foto carne recorte word.jpg">
+        <img
+          id="foto-image"
+          width="250"
+          height="300"
+          title="Foto de Miguel"
+          alt="Una imagen de Miguel Ángel sonriendo, y es foto carné"
+          src="/images/Foto carne recorte word.jpg"
+        />
+      </a>
+      <!-- Atributos: en este caso está el src; dan información adicional a los elementos HTML.
+Tienes atributos globales: que se pueden utilizar en cualquier etiqueta HTML: class, id...
+Atributos específicos de etiquetas: en la imagen el src; puede ser utilizado para vídeo, sonido, URL.
+    alt: es una forma de describir la imagen; en caso de que no se pueda ver la imagen, describe la imagen. Lo utiliza mucho Google.
+    title: no es para hacer una descripción, sino información relacionada con la imagen; si pones el ratón sobre la foto aparece ese texto.
+    width: para elegir el ancho de la imagen; se pueden quitar las comillas.
+    height: el alto de la imagen; se pueden quitar las comillas, ** excepto que tengas un espacio como en title.
+Atributos booleanos.
+    hidden: oculta el elemento. Da igual lo que le pases: oculta.
+Atributo id y class
+    id: nos permite identificar la imagen, global. Y solo puede aparecer una vez con ese valor. Ej. id="foto-image"; "foto-image" ya no se puede volver a usar.
+    class: es una forma de identificar elementos que se repiten, como li. Y esta sí se puede repetir.
+A input le pasa lo mismo:
+<input type="">
+    Diferentes tipos: type="datetime-local" // color // range // -->
+
+      <h2 id="proyectos">Proyectos realizados</h2>
+      <!-- Aside: es como algo que está separado del contenido. -->
+
+      <aside>
+        <header>
+          <!-- Utilizamos span para luego estilizar esa palabra -->
+          <h3>Mis tecnologías <span>favoritas</span></h3>
+        </header>
+        <!-- ol lista ordenada, pone números y no puntos. type="Cambiamos el tipo", reversed (al contrario), start="por si es con números y queremos que comience en 10" -->
+        <ol type="1" reversed start="10">
+          <li>HTML</li>
+          <li>CSS</li>
+          <!-- Con value podemos hacer que, aunque esté de 10 hacia abajo, obligar a empezar en otro -->
+          <li>Java</li>
+          <li value="5">C#</li>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>SQL</li>
+          <li>Node.js</li>
+        </ol>
+      </aside>
+      <!-- Section: para crear una sección. Article: información contenida; si lo sacas a otro sitio, tiene sentido y puede tener un header -->
+      <!-- Role: es para temas de accesibilidad; por defecto cada elemento HTML tiene un rol. Creamos un div y a este div podemos darle muchos roles. -->
+      <!-- <div role="button">Haz clic aquí </div>-->
+      <button>Haz clic aquí</button>
+
+      <section>
+        <article>
+          <header>
+            <h4>Sitio web corporativo</h4>
+          </header>
+          <p>
+            Desarrollo de un sitio web corporativo con una interfaz amigable y
+            moderna.
+          </p>
+          <footer>
+            <!-- small se suele utilizar para dar información no tan importante como el resto. -->
+            <small>Tecnologías utilizadas: HTML, CSS, JavaScript</small>
+          </footer>
+        </article>
+      </section>
+      <section>
+        <article>
+          <header>
+            <h4>La página de Tesla</h4>
+            <!-- loading: más "lazy", carga la imagen más tarde, solo cuando la necesita; se suele hacer a partir de la parte no visible.
+            Con width decimos que el 100% y con aspect-ratio utilizamos el de la foto -->
+            <img
+              style="width: 100%; aspect-ratio: 2860/1509"
+              loading="lazy"
+              src="images/Tesla.png"
+              alt="Captura de pantalla de la página de Tesla"
+            />
+          </header>
+          <p>
+            Desarrollo de un sitio web corporativo con una interfaz amigable y
+            moderna.
+          </p>
+          <footer>
+            <!-- small se suele utilizar para dar información no tan importante como el resto. -->
+            <small>Tecnologías utilizadas: HTML, CSS, JavaScript</small>
+          </footer>
+        </article>
+      </section>
+      <section>
+        <h2>Preguntas frecuentes</h2>
+        <!-- Caja desplegable, un desplegable en el cual se vería el summary y, al dar a la flecha, saldrían los párrafos -->
+        <!-- Si metemos open, por defecto se queda abierto, y al dar a la flecha se cierra -->
+        <details open>
+          <summary>¿Qué estudios tienes?</summary>
+          <p>
+            Estudié en la Universidad Europea de Madrid un FP Superior en
+            Desarrollo de Aplicaciones Web.
+          </p>
+        </details>
+        <details>
+          <summary>¿Cuáles son tus hobbies?</summary>
+          <p>
+            Me gusta mucho el deporte, la informática y, sobre todo, la
+            programación.
+          </p>
+        </details>
+        <details>
+          <summary>¿Cuál es tu lenguaje favorito?</summary>
+          <p>Me encanta Python, sin olvidar Java y C#</p>
+        </details>
+      </section>
+
+      <section>
+        <h2>Formulario de contacto</h2>
+        <!-- Form: es la etiqueta para formulario y tiene dos atributos muy importantes -->
+        <!-- method: es de servidores, pero normalmente se hace con post; y action: la acción, a qué URL tiene que enviar los datos. Aquí es donde usamos React -->
+        <form method="post" action="/">
+          <!-- fieldset: agrupación de los distintos inputs que vamos a tener -->
+          <fieldset>
+            <!-- legend para ponerle nombre al recuadro -->
+            <legend>Información personal</legend>
+
+            <!-- label: poner una etiqueta para que te lleve al input. 2 formas: con for="name" en el label; y la otra, envolver el input con el label (quitar id del input). -->
+            <div>
+              <label
+                >Nombre:
+                <!-- placeholder: pone lo que escribamos en gris en el recuadro del input. -->
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Miguel Ángel Perucha"
+                  required
+                />
+              </label>
+            </div>
+
+            <div>
+              <label
+                >Email:
+                <!-- Un div ahora por cada uno de estos elementos viene bien para que no se junten de izquierda a derecha. Lo correcto es estilizarlo, style="display: block"  -->
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="micorreo@gmail.com"
+                  required
+                />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Información adicional</legend>
+
+            <div>
+              <label
+                >Teléfono:
+                <input
+                  type="tel"
+                  name="tele"
+                  placeholder="567890321"
+                  required
+                  pattern="[0-9]{9}"
+                />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Otros</legend>
+
+            <div>
+              <label for="why">¿Por qué quieres contactar?</label>
+              <select name="why" id="why">
+                <option value="1">Trabajo</option>
+                <option value="2">Duda</option>
+                <option value="3">Más información</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="terms">¿Aceptas los términos?</label>
+              <input type="checkbox" name="terms" name="terms" required />
+            </div>
+
+            <div>
+              <!-- Datalist: es un elemento que te permite hacer como un autocompletado -->
+              <datalist id="languages">
+                <option value="JavaScript"></option>
+                <option value="Python"></option>
+                <option value="Java"></option>
+                <option value="C#"></option>
+              </datalist>
+
+              <label>
+                ¿Con qué lenguaje quieres que te ayude?
+                <input list="languages" name="languages" />
+              </label>
+            </div>
+          </fieldset>
+          <input type="submit" value="Enviar contacto" />
+          <!-- También se puede poner con button, pero el valor se quita y se pone de otra forma -->
+          <!-- El button dentro de un formulario por defecto siempre será un submit -->
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+    <footer>Copyright 2023 - El portfolio</footer>
+
+    <!-- Otros href: protocolos especiales -->
+    <a href="mailto:micorreo@gmail.com">Envíame un correo</a>
+    <a href="tel:+3468890234">Llamar por teléfono</a>
+    <a href="whatsapp://send?text=Hola miguel">WhatsApp</a>
+  </body>
+</html>

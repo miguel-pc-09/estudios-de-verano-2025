@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--
+    ========== CABECERA (HEAD) ==========
+    El <head> contiene metadatos y recursos que el navegador usa,
+    pero no se muestran como contenido principal.
+  -->
+
+    <!-- Juego de caracteres recomendado -->
+    <meta charset="utf-8" />
+
+    <!-- Control del viewport para móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO básico -->
+    <title>Apuntes HTML — etiquetas y ejemplos</title>
+    <meta
+      name="description"
+      content="Apuntes de HTML con ejemplos comentados de la mayoría de etiquetas útiles y actuales."
+    />
+    <meta name="author" content="Tu Nombre" />
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Robots (opcional: controla indexación) -->
+    <meta name="robots" content="index,follow" />
+
+    <!-- HTTP-EQUIV (cabeceras simuladas) -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+    <!-- Canonical (evita contenido duplicado) -->
+    <link
+      rel="canonical"
+      href="https://ejemplo.com/apuntes-html-completo.html"
+    />
+
+    <!-- Icono del sitio -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>💡</text></svg>"
+    />
+
+    <!-- Manifest PWA (opcional) -->
+    <!-- <link rel="manifest" href="/manifest.webmanifest"> -->
+
+    <!-- Preconexiones y pre-carga (performance) -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link rel="preload" href="/css/styles.css" as="style"> -->
+
+    <!-- Hojas de estilo -->
+    <style>
+      :root {
+        --bg: #0b1020;
+        --panel: #121937;
+        --text: #e6ecff;
+        --muted: #9bb3ff;
+        --accent: #60a5fa;
+        --accent-2: #34d399;
+        --warning: #fbbf24;
+        --border: #25305a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol";
+        background: linear-gradient(
+          180deg,
+          var(--bg),
+          #0d1328 40%,
+          #0e1223 100%
+        );
+        color: var(--text);
+        line-height: 1.5;
+      }
+      header,
+      main,
+      footer {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: rgba(11, 16, 32, 0.8);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        margin-right: 12px;
+      }
+      nav a:hover {
+        color: var(--accent);
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+      }
+      h1 {
+        margin: 10px 0 6px;
+      }
+      .toc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 10px 0 0;
+      }
+      .toc a {
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        color: var(--muted);
+        text-decoration: none;
+        background: #0f1630;
+      }
+      .toc a:hover {
+        border-color: var(--accent);
+        color: #cfe3ff;
+      }
+      .panel {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--panel);
+        padding: 16px;
+        margin: 20px 0;
+      }
+      .demo {
+        padding: 10px;
+        border-radius: 12px;
+        background: #0b132a;
+        border: 1px dashed #2a3868;
+        margin-top: 10px;
+      }
+      code,
+      kbd,
+      samp {
+        background: #0b132a;
+        padding: 0.1rem 0.35rem;
+        border-radius: 6px;
+        border: 1px solid #243156;
+      }
+      pre {
+        background: #0b132a;
+        border: 1px solid #243156;
+        border-radius: 12px;
+        padding: 10px;
+        overflow: auto;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        background: #0b132a;
+      }
+      th,
+      td {
+        border: 1px solid #2a3868;
+        padding: 6px;
+      }
+      caption {
+        color: #9bb3ff;
+        font-style: italic;
+        padding: 6px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: #cfe3ff;
+      }
+      .ok {
+        color: var(--accent-2);
+      }
+      .warn {
+        color: var(--warning);
+      }
+      footer {
+        border-top: 1px solid var(--border);
+        color: #9bb3ff;
+      }
+      .small {
+        font-size: 0.9rem;
+        color: #b7c5ff;
+      }
+    </style>
+
+    <!-- BASE: establece base para URLs relativas (ejemplo) -->
+    <!-- <base href="https://tu-dominio.com/"> -->
+
+    <!-- Carga de scripts: defer para ejecutar tras parseo -->
+    <script defer>
+      // Script mínimo para algunas demos
+      window.addEventListener("DOMContentLoaded", () => {
+        const out = document.getElementById("output-dist");
+        if (out) {
+          out.value = Number(document.getElementById("rango").value);
+        }
+      });
+      function drawCanvas() {
+        const c = document.getElementById("lienzo");
+        const ctx = c.getContext("2d");
+        const g = ctx.createLinearGradient(0, 0, 0, 150);
+        g.addColorStop(0, "#60a5fa");
+        g.addColorStop(1, "#34d399");
+        ctx.fillStyle = g;
+        ctx.fillRect(10, 10, 180, 130);
+        ctx.fillStyle = "#0b1020";
+        ctx.font = "16px system-ui";
+        ctx.fillText("canvas", 70, 85);
+      }
+      function openDialog() {
+        document.getElementById("dlg").showModal();
+      }
+      function closeDialog() {
+        document.getElementById("dlg").close();
+      }
+    </script>
+  </head>
+
+  <body onload="drawCanvas()">
+    <!--
+    ========== CUERPO (BODY) ==========
+  -->
+
+    <header>
+      <h1>Apuntes HTML — etiquetas y ejemplos</h1>
+      <p class="small">
+        Documento demostrativo con la mayoría de
+        <strong>etiquetas HTML5</strong> de uso habitual, con ejemplos y
+        comentarios.
+      </p>
+      <nav class="toc" aria-label="Índice rápido">
+        <a href="#texto">Texto</a>
+        <a href="#enlaces">Enlaces</a>
+        <a href="#listas">Listas</a>
+        <a href="#semantica">Semántica & layout</a>
+        <a href="#figuras">Imágenes & figuras</a>
+        <a href="#multimedia">Multimedia</a>
+        <a href="#tablas">Tablas</a>
+        <a href="#formularios">Formularios</a>
+        <a href="#embeds">Embeds & canvas</a>
+        <a href="#scripting">Scripting</a>
+        <a href="#varios">Otros útiles</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- =================== TEXTO =================== -->
+      <section id="texto" class="panel">
+        <h2>1) Texto y tipografía (inline & block)</h2>
+        <!-- Encabezados de nivel 1 a 6 -->
+        <div class="grid">
+          <div>
+            <h3>Encabezados</h3>
+            <div class="demo">
+              <h1>h1 (título principal)</h1>
+              <h2>h2</h2>
+              <h3>h3</h3>
+              <h4>h4</h4>
+              <h5>h5</h5>
+              <h6>h6</h6>
+              <!-- <hgroup> (no recomendado) agrupaba headings -->
+            </div>
+            <!-- Párrafo, salto de línea, regla -->
+            <h3>Párrafos & saltos</h3>
+            <div class="demo">
+              <p>
+                Un <strong>párrafo</strong> de ejemplo. <em>Énfasis</em> y
+                <i>cursiva semántica</i> difieren en significado:
+                <em>em</em> (énfasis), <i>i</i> (offset text).
+              </p>
+              Texto con <br />
+              salto de línea explícito (<code>&lt;br&gt;</code>).
+              <hr />
+              <p>
+                <small>Texto pequeño con <code>&lt;small&gt;</code></small>
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3>Semántica inline</h3>
+            <div class="demo">
+              <p>
+                <strong>strong</strong>, <b>b</b> (no semántico), <em>em</em>,
+                <i>i</i>, <u>u</u> (subrayado de edición),
+                <mark>mark</mark> (resaltado), <s>s</s> (ya no válido),
+                <del>del</del> / <ins>ins</ins> (ediciones), <sub>sub</sub>/<sup
+                  >sup</sup
+                >
+                (índices), <code>code</code>, <samp>samp</samp>, <kbd>kbd</kbd>,
+                <var>var</var>.
+              </p>
+              <p>
+                Cita corta con <q cite="https://developer.mozilla.org">q</q>;
+                cita en bloque con <code>blockquote</code>:
+              </p>
+              <blockquote cite="https://developer.mozilla.org">
+                “El bloque de cita puede incluir atributo <code>cite</code>.”
+              </blockquote>
+              <p>
+                <abbr title="HyperText Markup Language">HTML</abbr> +
+                <dfn>término definido</dfn>, <cite>cita de obra</cite>,
+                <bdi dir="auto">BDI ‏عربي</bdi> /
+                <bdo dir="rtl">BDO fuerza dirección</bdo>, <wbr /> oportunidad
+                de corte.
+              </p>
+              <p>
+                <ruby>東 <rt>Dōng</rt></ruby> (anotaciones ruby).
+              </p>
+              <p>
+                <span class="pill">span</span> (contenedor inline genérico);
+                <time datetime="2025-10-04">4 oct 2025</time>;
+                <data value="101">ID#101</data>.
+              </p>
+              <pre>
+Texto preformateado con <strong>pre</strong>
+mantiene espacios y saltos.
+            </pre
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================== ENLACES =================== -->
+      <section id="enlaces" class="panel">
+        <h2>2) Enlaces</h2>
+        <div class="demo">
+          <!-- a: hipervínculo -->
+          <p>
+            <a
+              href="https://developer.mozilla.org"
+              target="_blank"
+              rel="noopener"
+              >Enlace externo seguro</a
+            >
+            — fragmentos: <a href="#formularios">ir a formularios</a>
+          </p>
+          <!-- link: en <head> para recursos; aquí solo referencia -->
+          <!-- base: define base para URLs relativas (ver <head>) -->
+        </div>
+      </section>
+
+      <!-- =================== LISTAS =================== -->
+      <section id="listas" class="panel">
+        <h2>3) Listas</h2>
+        <div class="grid">
+          <div>
+            <h3>Desordenada (ul)</h3>
+            <div class="demo">
+              <ul>
+                <li>Elemento</li>
+                <li>Otro elemento</li>
+                <li>
+                  Elemento con sublista
+                  <ul>
+                    <li>Sub elemento</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3>Ordenada (ol)</h3>
+            <div class="demo">
+              <ol start="3" reversed>
+                <li>Elemento 3</li>
+                <li>Elemento 2</li>
+                <li>Elemento 1</li>
+              </ol>
+            </div>
+          </div>
+          <div>
+            <h3>Descripción (dl)</h3>
+            <div class="demo">
+              <dl>
+                <dt>HTML</dt>
+                <dd>Lenguaje de marcado</dd>
+                <dt>CSS</dt>
+                <dd>Hojas de estilo</dd>
+                <dt>JS</dt>
+                <dd>Lógica del cliente</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SEMÁNTICA & LAYOUT ============ -->
+      <section id="semantica" class="panel">
+        <h2>4) Semántica & layout</h2>
+        <!-- Estructura típica: header, nav, main, article, section, aside, footer, address -->
+        <article class="demo">
+          <header>
+            <h3>Cabecera del artículo (header)</h3>
+            <address class="small">
+              Escrito por
+              <a href="mailto:ejemplo@correo.com">ejemplo@correo.com</a>
+            </address>
+          </header>
+          <section>
+            <h4>Sección 1</h4>
+            <p>Contenido de la sección dentro de <code>section</code>.</p>
+          </section>
+          <section>
+            <h4>Sección 2</h4>
+            <p>Otra sección…</p>
+          </section>
+          <aside class="small">aside: contenido relacionado/lateral.</aside>
+          <footer class="small">Pie del artículo (footer)</footer>
+        </article>
+
+        <!-- details/summary: acordeón nativo -->
+        <details class="demo">
+          <summary>Más información (details/summary)</summary>
+          <p>Contenido plegable sin JS.</p>
+        </details>
+
+        <!-- dialog: cuadro modal nativo -->
+        <div class="demo">
+          <button type="button" onclick="openDialog()">
+            Abrir <code>dialog</code>
+          </button>
+          <dialog id="dlg">
+            <p>Hola desde <strong>&lt;dialog&gt;</strong></p>
+            <form method="dialog">
+              <button>OK</button>
+              <button type="button" onclick="closeDialog()">Cerrar</button>
+            </form>
+          </dialog>
+        </div>
+      </section>
+
+      <!-- ============ FIGURAS & IMÁGENES ============ -->
+      <section id="figuras" class="panel">
+        <h2>5) Imágenes & figuras</h2>
+        <div class="grid">
+          <div>
+            <h3>img + alt</h3>
+            <div class="demo">
+              <img
+                src="https://via.placeholder.com/280x160.png?text=IMG"
+                alt="Imagen de ejemplo (placeholder)"
+                width="280"
+                height="160"
+              />
+              <!-- Atributos útiles: alt (accesibilidad), width/height (evita CLS), loading="lazy" -->
+            </div>
+          </div>
+          <div>
+            <h3>picture + source (art direction)</h3>
+            <div class="demo">
+              <picture>
+                <source
+                  media="(min-width: 700px)"
+                  srcset="https://via.placeholder.com/480x180.png?text=Wide"
+                />
+                <img
+                  src="https://via.placeholder.com/320x180.png?text=Default"
+                  alt="Responsive con picture"
+                />
+              </picture>
+            </div>
+          </div>
+          <div>
+            <h3>figure + figcaption</h3>
+            <div class="demo">
+              <figure>
+                <img
+                  src="https://via.placeholder.com/240x140.png?text=Figura"
+                  alt="Figura"
+                  width="240"
+                  height="140"
+                />
+                <figcaption>Descripción de la figura</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div>
+            <h3>map + area (mapa de imagen)</h3>
+            <div class="demo">
+              <img
+                src="https://via.placeholder.com/320x120.png?text=Mapa"
+                alt="Mapa con áreas"
+                usemap="#m1"
+                width="320"
+                height="120"
+              />
+              <map name="m1">
+                <!-- coords: x1,y1,x2,y2 (rect) -->
+                <area
+                  shape="rect"
+                  coords="10,10,150,60"
+                  href="https://developer.mozilla.org"
+                  target="_blank"
+                  alt="MDN"
+                />
+              </map>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MULTIMEDIA ================= -->
+      <section id="multimedia" class="panel">
+        <h2>6) Multimedia (audio / video / track)</h2>
+        <div class="grid">
+          <div>
+            <h3>audio</h3>
+            <div class="demo">
+              <audio controls>
+                <source
+                  src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+                  type="audio/mpeg"
+                />
+                Tu navegador no soporta audio HTML5.
+              </audio>
+            </div>
+          </div>
+          <div>
+            <h3>video + track (subtítulos)</h3>
+            <div class="demo">
+              <video
+                controls
+                width="360"
+                poster="https://via.placeholder.com/360x200.png?text=Vídeo"
+              >
+                <source
+                  src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                  type="video/mp4"
+                />
+                <track
+                  kind="captions"
+                  srclang="en"
+                  label="English"
+                  default
+                  src="https://raw.githubusercontent.com/mdn/learning-area/main/html/multimedia-and-embedding/video-and-audio-content/video/sintel-en.vtt"
+                />
+                Tu navegador no soporta video HTML5.
+              </video>
+            </div>
+          </div>
+          <div>
+            <h3>svg (gráfico vectorial)</h3>
+            <div class="demo">
+              <svg
+                viewBox="0 0 120 60"
+                width="220"
+                height="110"
+                role="img"
+                aria-label="SVG de ejemplo"
+              >
+                <rect
+                  x="5"
+                  y="5"
+                  width="110"
+                  height="50"
+                  rx="6"
+                  fill="#60a5fa"
+                />
+                <text
+                  x="60"
+                  y="37"
+                  font-size="18"
+                  text-anchor="middle"
+                  fill="#0b1020"
+                >
+                  SVG
+                </text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================== TABLAS =================== -->
+      <section id="tablas" class="panel">
+        <h2>7) Tablas</h2>
+        <div class="demo">
+          <table>
+            <caption>
+              Tabla con thead/tbody/tfoot
+            </caption>
+            <colgroup>
+              <col span="1" style="background: #0d1633" />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Teclado</td>
+                <td>29€</td>
+              </tr>
+              <tr>
+                <td>Ratón</td>
+                <td>19€</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Total</th>
+                <th>48€</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================= FORMULARIOS ================= -->
+      <section id="formularios" class="panel">
+        <h2>8) Formularios</h2>
+        <p class="small">
+          Incluye inputs comunes, <kbd>datalist</kbd>, <kbd>select</kbd>,
+          <kbd>meter</kbd>, <kbd>progress</kbd>, <kbd>output</kbd>…
+        </p>
+        <form class="demo" action="#" method="post" autocomplete="on">
+          <fieldset>
+            <legend>Datos básicos</legend>
+
+            <label
+              >Nombre
+              <input
+                name="nombre"
+                type="text"
+                placeholder="Tu nombre"
+                required
+                minlength="2"
+                maxlength="40"
+              />
+            </label>
+
+            <label
+              >Email
+              <input
+                name="email"
+                type="email"
+                placeholder="tucorreo@dominio.com"
+                required
+              />
+            </label>
+
+            <label
+              >Contraseña
+              <input name="pass" type="password" required />
+            </label>
+
+            <label
+              >Fecha y hora
+              <input type="datetime-local" name="dt" />
+            </label>
+
+            <label
+              >Color favorito
+              <input type="color" name="col" />
+            </label>
+
+            <label
+              >Monto (€)
+              <input
+                type="number"
+                name="monto"
+                min="0"
+                max="9999"
+                step="0.01"
+                value="0"
+              />
+            </label>
+
+            <label
+              >Teléfono
+              <input type="tel" name="tel" />
+            </label>
+
+            <label
+              >URL personal
+              <input type="url" name="url" placeholder="https://" />
+            </label>
+
+            <label
+              >Búsqueda
+              <input
+                type="search"
+                name="q"
+                list="sugerencias"
+                placeholder="Buscar…"
+              />
+            </label>
+            <datalist id="sugerencias">
+              <option value="HTML"></option>
+              <option value="CSS"></option>
+              <option value="JavaScript"></option>
+            </datalist>
+          </fieldset>
+
+          <fieldset>
+            <legend>Selecciones</legend>
+
+            <label
+              >Lenguajes
+              <select name="langs" multiple size="4">
+                <optgroup label="Frontend">
+                  <option>HTML</option>
+                  <option>CSS</option>
+                  <option selected>JavaScript</option>
+                </optgroup>
+                <optgroup label="Backend">
+                  <option>Python</option>
+                  <option>Java</option>
+                  <option>C#</option>
+                </optgroup>
+              </select>
+            </label>
+
+            <div>
+              <span>Rol:</span>
+              <label
+                ><input type="radio" name="rol" value="dev" checked />
+                Dev</label
+              >
+              <label
+                ><input type="radio" name="rol" value="design" /> Design</label
+              >
+            </div>
+
+            <div>
+              <span>Intereses:</span>
+              <label><input type="checkbox" name="int_ai" /> IA</label>
+              <label
+                ><input type="checkbox" name="int_web" checked /> Web</label
+              >
+              <label><input type="checkbox" name="int_mobile" /> Móvil</label>
+            </div>
+
+            <label
+              >Descripción
+              <textarea
+                name="bio"
+                rows="3"
+                cols="30"
+                placeholder="Cuéntame…"
+              ></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Medidores</legend>
+            <label
+              >Progreso:
+              <progress value="65" max="100">65%</progress>
+            </label>
+            <br />
+            <label
+              >CPU:
+              <meter
+                min="0"
+                max="100"
+                low="40"
+                high="80"
+                optimum="30"
+                value="55"
+              >
+                55
+              </meter>
+            </label>
+            <br />
+            <label for="rango">Rango: </label>
+            <input
+              id="rango"
+              type="range"
+              min="0"
+              max="100"
+              value="30"
+              oninput="output_dist.value = this.value"
+            />
+            <output id="output-dist" for="rango">30</output>
+          </fieldset>
+
+          <div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="alert('Botón normal')">
+              Botón JS
+            </button>
+          </div>
+        </form>
+        <p class="small">
+          Atributos útiles de <code>form</code>: <code>novalidate</code>,
+          <code>method</code>, <code>action</code>, <code>enctype</code>,
+          <code>autocomplete</code>, <code>target</code>…
+        </p>
+      </section>
+
+      <!-- =============== EMBEDS & CANVAS =============== -->
+      <section id="embeds" class="panel">
+        <h2>9) Embeds, Iframe, Object, Canvas</h2>
+        <div class="grid">
+          <div>
+            <h3>iframe (contenido embebido)</h3>
+            <div class="demo">
+              <iframe
+                src="https://developer.mozilla.org"
+                title="MDN Web Docs"
+                width="100%"
+                height="180"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+          <div>
+            <h3>object / embed (no siempre necesarios)</h3>
+            <div class="demo">
+              <!-- object permite incrustar recursos “plugin-like” -->
+              <object
+                data="data:text/plain,Hola%20desde%20object"
+                type="text/plain"
+                width="100%"
+                height="70"
+              >
+                <param name="autoplay" value="false" />
+                Tu navegador no pudo mostrar <code>object</code>.
+              </object>
+              <p class="small">
+                Evita <code>embed</code>/<code>object</code> salvo casos
+                específicos.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3>canvas (dibujo 2D)</h3>
+            <div class="demo">
+              <canvas
+                id="lienzo"
+                width="200"
+                height="150"
+                aria-label="Dibujo canvas"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================== SCRIPTING =================== -->
+      <section id="scripting" class="panel">
+        <h2>10) Scripting</h2>
+        <div class="demo">
+          <p>
+            <code>&lt;script&gt;</code> puede ser: inline, externo
+            (<code>src</code>), con <code>defer</code> (recomendado),
+            <code>async</code> (para scripts independientes) o
+            <code>type="module"</code> (ESM).
+          </p>
+          <noscript class="warn"
+            >Tu navegador parece tener JS desactivado.</noscript
+          >
+          <template id="tpl-ejemplo">
+            <!-- template: contenido inerte listo para clonar via JS -->
+            <p class="small">Esto está dentro de un <code>template</code>.</p>
+          </template>
+        </div>
+      </section>
+
+      <!-- ====================== VARIOS ====================== -->
+      <section id="varios" class="panel">
+        <h2>11) Otros útiles & atributos globales</h2>
+        <div class="demo">
+          <p title="Atributo global 'title'">
+            Atributos globales frecuentes: <code>id</code>, <code>class</code>,
+            <code>title</code>, <code>hidden</code>, <code>style</code>,
+            <code>tabindex</code>, <code>draggable</code>,
+            <code>contenteditable</code>, <code>lang</code>, <code>dir</code>,
+            <code>aria-*</code>, y los <code>data-*</code>.
+          </p>
+          <p data-curso="HTML" id="demo-data">
+            Este párrafo tiene <code>data-curso="HTML"</code> (dataset).
+          </p>
+          <p>
+            <span class="pill ok">Accesibilidad</span> Usa
+            <code>alt</code> descriptivo en imágenes, roles y
+            <code>aria-*</code> cuando sean necesarios, y jerarquía correcta de
+            headings.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Hecho para apuntes. Actualizado:
+        <time datetime="2025-10-04">oct 2025</time>
+      </p>
+      <p class="small">
+        No incluye etiquetas obsoletas (p. ej. <code>center</code>,
+        <code>font</code>, <code>marquee</code>…), ni APIs muy específicas.
+      </p>
+    </footer>
+  </body>
+</html>
