@@ -144,12 +144,71 @@ print("")
 
 # 8. Crea una clase "Point" que represente un punto en el espacio 2D con coordenadas "x" e "y". Añade un método que calcule la distancia entre dos puntos.
 print("Ejercicio 8")
+class Point:
+    def __init__(self, x, y):
+        self.x = float(x)
+        self.y = float(y)
+    
+    def distance_to(self, other):
+        dx = other.x - self.x
+        dy = other.y - self.y
+        return (dx*dx + dy*dy) ** 0.5
+
+    def __repr__(self):
+        return f"Point(x={self.x}, y={self.y})" 
+    
+p1 = Point(0, 0)
+p2 = Point(3, 4)
+print("Distancia:", p1.distance_to(p2))
 print("")
 
 # 9. Crea una clase "Employee" que tenga propiedades como "name", "hourly_wage" (pago por hora) y "hours_worked". Añade un método que calcule el pago total basado en las horas trabajadas y el salario por hora.
 print("Ejercicio 9")
+class Employee:
+    def __init__(self, name, hourly_wage, hours_worked):
+        self.name = name
+        self.hourly_wage = float(hourly_wage)
+        self.hours_worked = float(hours_worked)
+    
+    def total_pay(self):
+        return self.hourly_wage * self.hours_worked
+    
+    def __str__(self):
+        return f"Empleado: {self.name} | Pago total: {self.total_pay():.2f}"
+
+emp = Employee("Miguel", 12.5, 20)  
+print("Nombre:", emp.name)
+print("Pago total:", emp.total_pay())        
+print(emp)
 print("")
 
 # 10. Crea una clase "Store" que tenga una propiedad "inventory" (una lista de productos). Añade un método para agregar un producto al inventario y otro para mostrar todos los productos disponibles.
 print("Ejercicio 10")
+class Store:
+    def __init__(self, inventory=None):
+        self.inventory = list(inventory) if inventory is not None else []
+
+    def add_product(self, product):
+        """Agrega un producto al inventario."""
+        self.inventory.append(product)
+
+    def show_inventory(self):
+        """Muestra todos los productos disponibles."""
+        if not self.inventory:
+            print("No hay productos disponibles.")
+            return
+        print("Productos disponibles:")
+        for i, prod in enumerate(self.inventory, start=1):
+            print(f"{i}. {prod}")
+
+    def __str__(self):
+        return f"Tienda con {len(self.inventory)} producto(s)"
+
+
+store = Store()
+store.show_inventory()          
+store.add_product("Teclado")
+store.add_product("Ratón")
+store.add_product("Monitor")
+store.show_inventory()
 print("")
