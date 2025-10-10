@@ -24,20 +24,23 @@ $age = 37;
 // Al ser devil, el mas es para sumar numeros, por mas que pongamos string lo va a tomar como int
 $newAge = 39 + '1';
 // Y con el punto es para concatenar
-$newAge2 = $age. '1'
+$newAge2 = $age. '1';
+
+// De esta forma podemos mezclar variables y texto siempre con "" no con ''
+$output = "Hola $name, con una edad de $age años 😁" ;
+
+// Tambien podemos concatenar con el punto$output .= 
+// $output = "Hola $name";
+// $output .= ", con una edad de $age años 😁" ;
+
+// Para mostrar simbolos o escaparlas usamos la barra invertida \$ 
 ?>
 
 
 <h1>
     <?= $newAge2; ?>
     <br>
-    <?= 
-    // Tambien podemos concatenar con el punto de esta forma en caso de ser muy largo
-    "Hola " 
-    . $name 
-    . "Con una edad de " 
-    . $age 
-    .' 😁'; ?>
+    <?= $output ?>
 </h1>
 
 <style>
