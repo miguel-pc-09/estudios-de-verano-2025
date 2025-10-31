@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <title>Formulario de Ejemplo</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Formulario de Ejemplo</h1>
+    
+    <form id="formulario" action="confirmacion.html">
+        <!-- Etiqueta y campo para el nombre -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <!-- Etiqueta y campo para el correo electrónico -->
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- Etiqueta y campo para la edad -->
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="18" required>
+
+        <!-- Etiqueta y menú desplegable para el sexo -->
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="">Selecciona una opción</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <!-- Etiqueta y campo para comentarios -->
+        <label for="comentarios">Comentarios:</label>
+        <input type="text" id="comentarios" name="comentarios" required>
+
+        <input type="submit" value="Enviar">
+        
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+   

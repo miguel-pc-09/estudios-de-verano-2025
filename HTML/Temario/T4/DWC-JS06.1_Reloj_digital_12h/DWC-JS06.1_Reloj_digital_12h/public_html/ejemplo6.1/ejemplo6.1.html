@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+Profesor : José David Ventura Roldán
+DWC Ejercicio 6.1- Tema 1
+-->
+
+<html lang="es">
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
+        <title>Reloj con Javascript</title>
+        <meta charset="UTF-8">
+        <script src="scripts/ejemplo6.js"></script>
+        <script language="JavaScript">
+            function updateClock() {
+                var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+
+                if (hours < 10) {
+                    hours = "0" + hours;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+                }
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+
+                document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+            }
+
+            setInterval(updateClock, 1000);
+        </script>
+
+    </head>
+
+    <body onload="startTime()">
+        Vemos aquí el reloj funcionando...
+
+        <div id="clockdate">
+            <div class="clockdate-wrapper">
+                <div id="clock"></div>
+                <div id="date"></div>
+            </div>
+        </div>
+
+    </body>
+</html>

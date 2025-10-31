@@ -1,0 +1,105 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+h1{
+    text-align: center;
+    margin-top:20px;
+}
+html, body {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    
+}
+#menu{
+    margin-top: -10px;
+}
+/* Menú de Navegación */
+#menu ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 10px 0;
+    background: #333;
+    border-radius: 5px;
+}
+/*Separacion entre las palabras del menú*/
+#menu li {
+    margin: 0 15px;
+}
+/*Letras del menu para que sean blancas y cambian de color al pasar*/
+#menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.5s ease;
+  
+}
+/*Cambio de color al pasar por el menu*/
+#menu a:hover {
+    color: #d9534f;
+}
+/* Contenedor Principal */
+#contenedor {
+    width: 80vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(211, 211, 211, 0.8);
+    padding: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+h2{
+    text-align: center;
+    margin-top:10px;
+    font-size: 22px;
+}
+p{
+    text-align: center;
+    margin-top: 45px;
+    font-size: 16px;
+}
+
+/* Estilo general del formulario */
+body {
+    background-image: url('images/cubos3d.jpg');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en la página */
+    font-family: Arial, sans-serif; /* Fuente principal será Arial. Si no está disponible, usa una fuente genérica sans-serif. */
+    margin: 100px;                  /* Margen de 100px alrededor del contenido (superior, inferior, izquierdo y derecho). */
+    height: 100vh;      /*Asegura que el fondo bura el 100% de la altura */
+    overflow: hidden; /*Evita el desplazamiento vertial*/
+}
+
+
+
+/* Contenedor de imágenes en fila */
+.galeria {
+    margin-top: 10px;
+    display: flex; /* Hace que las imágenes se alineen en fila */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten si la pantalla es pequeña */
+    gap: 10px; /* Espacio entre imágenes */
+}
+
+/* Ajuste de imágenes */
+.galeria img {
+    width: 18%; /* Cada imagen ocupa aproximadamente el 18% del ancho (para 5 imágenes) */
+    max-width: 200px; /* Evita que sean demasiado grandes */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease-in-out; /* Efecto al pasar el mouse */
+}
+
+/* Efecto de zoom al pasar el mouse */
+.galeria img:hover {
+    transform: scale(1.1); /* Hace que la imagen crezca ligeramente */
+}

@@ -1,0 +1,60 @@
+/* Ajustes generales */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa toda la pantalla */
+    overflow: hidden;  /* Evita el desplazamiento */
+    background-image: url('images/cubos3d.jpg'); /* Imagen de fondo de todo el proyecto */
+    background-size: cover;  /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* Evita que se repita */
+}
+
+/* Estilo del título */
+h2 {
+    text-align: center;
+    color: white;  /* Para que el texto sea visible sobre la imagen de fondo */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);  /* Sombra para mejor lectura */
+    margin-bottom: 20px;
+}
+
+/* Contenedor de la galería */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* aletorias columnas */
+    grid-template-rows: repeat(2, auto); /* 2 filas ajustables */
+    gap: 20px; /* Espaciado entre imágenes */
+    width: 90vw;  /* Ajusta la galería al 90% del ancho de la pantalla */
+    height: 70vh;  /* Ocupa el 70% de la altura de la pantalla */
+    justify-items: center;
+    align-items: center;
+}
+
+/* Imágenes dentro de la galería */
+.galeria img {
+    width: 100%;   /* Que ocupe todo el espacio disponible en su celda */
+    height: auto;
+    max-width: 200px;
+    border-radius: 12px; /* Bordes redondeados */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar las imágenes */
+}
+
+/* Hacer que algunas imágenes sean más grandes para variabilidad */
+.galeria img:nth-child(odd) {
+    max-width: 250px;
+}
+/*para seleccionar elementos pares y su tamaño*/
+.galeria img:nth-child(even) {
+    max-width: 180px;
+}
+
+/* Efecto hover o zoom al pasar con el raton */
+.galeria img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+}

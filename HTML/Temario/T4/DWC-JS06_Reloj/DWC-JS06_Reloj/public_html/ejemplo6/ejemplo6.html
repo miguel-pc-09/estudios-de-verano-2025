@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+Profesor : José David Ventura Roldán
+DWC Ejercicio 6- Tema 1
+-->
+
+<html lang="es">
+    <head>
+        <title>Reloj con Javascript</title>
+        <meta charset="UTF-8">
+        <script src="scripts/ejemplo6.js"></script>
+        <script language="JavaScript">
+            function startTime() {
+                var today = new Date();
+                var hr = today.getHours();
+                var min = today.getMinutes();
+                var sec = today.getSeconds();
+                //Add a zero in front of numbers<10
+                min = checkTime(min);
+                sec = checkTime(sec);
+                document.getElementById("clock").innerHTML = hr + " : " + min + " : " + sec;
+                var time = setTimeout(function () {
+                    startTime()
+                }, 500);
+            }
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i;
+                }
+                return i;
+            }
+
+        </script>
+    </head>
+
+    <body onload="mueveReloj()">
+
+        Vemos aquí el reloj funcionando...
+
+        <form name="form_reloj">
+            <input type="text" name="reloj" size="10">
+            <!-- Debemos colocar un pequeño formulario donde tan solo tendremos un campo de texto. -->
+        </form>
+
+    </body>
+</html>

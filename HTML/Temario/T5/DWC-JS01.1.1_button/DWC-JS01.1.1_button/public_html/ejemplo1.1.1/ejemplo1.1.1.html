@@ -1,0 +1,53 @@
+<!DOCTYPE HTML> 
+<!-- Crear un mensaje de confirmación con confirm()
+A diferencia de la función Alert, la función confirm() además de mostrar un mensaje emergente nos permite aceptar o denegar dicho mensaje.
+-->
+
+<html lang="es">
+    <head>
+        <title>Ejercicio 1.1.1 - Tema 1 </title>
+        <meta charset="UTF-8">
+        
+        <!-- El uso de type se concibió para indicarle al navegador qué lenguaje era el que usaba el script. Por ejemplo 
+        type="text/vbscript" indicaría lenguaje VBscript, type="text/tcl" indicaría lenguaje TCL, etc.-->
+        <script type="text/javascript">
+         
+        //creamos una finción ConfirmDemo
+        function ConfirmDemo() {
+        //La sentencia var declara una variable, opcionalmente inicializándola con un valor, e ingresamos un mensaje a mostrar
+        var mensaje = confirm("¿Te gusta Desarrollo JS?");
+        
+        //Detectamos si el usuario acepto el mensaje
+        
+        /*IF es una estructura de control utilizada para tomar decisiones. Es un condicional que sirve para realizar unas 
+        u otras operaciones en función de una expresión. Funciona de la siguiente manera, primero se evalúa una expresión, si 
+        da resultado positivo se realizan las acciones relacionadas con el caso positivo*/
+        
+        if (mensaje) {
+                    alert("¡Gracias por aceptar!");
+                }
+                //Detectamos si el usuario denegó el mensaje
+                else {
+                    alert("¡Haz denegado el mensaje!");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <!-- es una versión específica del elemento <input>, que se usa para crear un botón en el que se puede hacer click 
+            sin ningún valor por defecto, es decir, no tiene un comportamiento predeterminado -->
+            
+            <!-- El evento onclick en JavaScript te permite como programador, ejecutar una función cuando se le da clic 
+            a un elemento-->
+            <!-- Value es lo que vendrá dentro de onclick -->
+            <input type="button" onclick="ConfirmDemo()" value="Click para ver un mensaje de confirmación" />
+        </form>
+        
+        <!-- Una etiqueta <div> es una etiqueta que define las divisiones lógicas (es un contenedor) existentes en el contenido de 
+        una página web. 
+        Puede utilizar etiquetas div para centrar bloques de contenido, crear efectos de columna y crear diferentes áreas de color,
+        entre otras posibilidades -->
+                <div><p>Ejercicio 1.1.1 - Tema 1</p></div>
+    </body>
+</html>

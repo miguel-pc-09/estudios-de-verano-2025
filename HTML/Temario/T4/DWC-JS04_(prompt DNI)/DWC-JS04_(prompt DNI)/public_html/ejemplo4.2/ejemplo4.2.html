@@ -1,0 +1,150 @@
+
+<!-- 
+
+
+
+    REVISAR EJERCICIO ERROR AL CALCULO, NO CIERRA
+
+La formula para calcular la letra del DNI y obtener el NIF es la siguiente:
+
+Tomamos el número completo de hasta 8 cifras de nuestro DNI, lo dividimos entre 23 y nos quedamos con el resto de dicha división, 
+o dicho de otro modo, calculamos el módulo 23 del DNI.
+
+El resultado anterior es un número entre 0 y 22. A cada uno de estos posibles números le corresponde una letra, según la siguiente
+tabla:
+
+RESTO	0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+LETRA	T R W A	G M Y F	P D X  B  N  J  Z  S  Q  V  H  L  C  K  E
+-->
+
+
+
+<!DOCTYPE html>
+    <!--
+    Profesor : José David Ventura Roldán
+    DWC Ejercicio 4.2- Tema 1
+    -->
+    <html lang="es">
+        <head>
+            <title>Ejercicio 4.2 - Tema 1 (Variables y Constantes)</title>
+            <meta charset="UTF-8">
+
+        </head>
+        <body>
+            <script>
+                //DECLARAMOS LAS VARIABLES QUE VAMOS A USAR
+                //var representa el nombre que el programador da a la variable
+                var resto = 0;
+                var letra = "";
+                
+                /*Los bucles do-while y while en Java te permiten, como su nombre indica (while significa mientras), repetir una 
+                 acción en un bucle siempre y cuando se cumpla una condición booleana de control*/
+                do {
+                    var numero = prompt("Introduce tu dni te indicaré la letra");
+                    
+                    //Los principales usos del objeto Number(valor) son convertir un string u otro valor a uno de tipo numérico
+                    //Operador de equivalencia ( == ) nos devuelve un valor de verdadero si los operandos son iguales
+                    
+                    if (Number(numero) == numero) {
+                        numero = Number(numero);
+                        if (numero >= 0 && numero <= 9999999999) {
+                            //CALCULAMOS EL RESTO DE DIVIDIR EL NÚMERO ENTRE 23
+                            resto = numero % 23;
+                            //SEGÚN SEA EL RESTO ASIGNAMOS UN VALOR A LA VARIABLE LETRA
+                            
+                            /*Switch es un condicional de selección de Java, una instrucción de múltiples vías que evalúa distintas
+                             opciones o “casos” y selecciona una opción entre varias.*/
+                
+                            switch (resto) {
+                                case 0:
+                                    letra = "T";
+                                    break;
+                                case 1:
+                                    letra = "R";
+                                    break;
+                                case 2:
+                                    letra = "W";
+                                    break;
+                                case 3:
+                                    letra = "A";
+                                    break;
+                                case 4:
+                                    letra = "G";
+                                    break;
+                                case 5:
+                                    letra = "M";
+                                    break;
+                                case 6:
+                                    letra = "Y";
+                                    break;
+                                case 7:
+                                    letra = "F";
+                                    break;
+                                case 8:
+                                    letra = "P";
+                                    break;
+                                case 9:
+                                    letra = "D";
+                                    break;
+                                case 10:
+                                    letra = "X";
+                                    break;
+                                case 11:
+                                    letra = "B";
+                                    break;
+                                case 12:
+                                    letra = "N";
+                                    break;
+                                case 13:
+                                    letra = "J";
+                                    break;
+                                case 14:
+                                    letra = "Z";
+                                    break;
+                                case 15:
+                                    letra = "S";
+                                    break;
+                                case 16:
+                                    letra = "Q";
+                                    break;
+                                case 17:
+                                    letra = "V";
+                                    break;
+                                case 18:
+                                    letra = "H";
+                                    break;
+                                case 19:
+                                    letra = "L";
+                                    break;
+                                case 20:
+                                    letra = "C";
+                                    break;
+                                case 21:
+                                    letra = "K";
+                                    break;
+                                case 22:
+                                    letra = "E";
+                                    break;
+                                default:
+                                    //SI NO ES UN NÚMERO ENTRE 0 Y 22 MOSTRAMOS UN ERROR
+                                    alert("Numero erroneo");
+                            }
+                        }
+                        //MOSTRAMOS MENSAJE CON EL DNI Y LA LETRA OBTENIDA
+                        alert("Numero: " + numero + ", Letra: " + letra);
+                    }
+                    //SI NO ES UN NÚMERO
+                    else {
+                        //SI SE PULSÓ ACEPTAR SIN PONER UN NÚMERO
+                        if (numero != undefined) {
+                            alert(numero + " No es un numero");
+                        }
+                    }
+                    //MIENTRAS NO SE PULSE CANCELAR VUELVE ARRIBA
+                    // != significa operador diferentes
+                } while (numero != undefined);
+            </script>
+            <h1>T1 - Ejercicio 4.2 "Prompt DNI" </h1>
+        </body>
+
+    </html>

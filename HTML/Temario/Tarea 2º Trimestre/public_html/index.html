@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="es" dir="ltr">
+   
+    <head>
+        <title>Formulario</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Formulario de inscripción" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="indexcss.css">
+    </head>
+    <body>
+        <h1>FORMULARIO DE INCRIPCIÓN</h1>
+        
+        <form id="formInsc" action="InicioSesion.html" method="get">
+        <!--Usare fieldset para separar campos, Campo para nombre-->
+        <fieldset>
+        <legend>Datos personales</legend>
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br>
+        
+        <!--Campo para apellidos requerido-->
+        <label for="apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos" name="apellidos" required><br>
+        
+        
+        
+        <!-- Campo para el dni -->
+        <label for="dni">DNI:</label><br>
+        <input type="text" id="dni" name="dni" value="" size="10" maxlength="9"><br><br>
+        
+         <!-- Campo para el genero --> 
+         <label for="genero">Sexo:</label><br>
+                <input type="radio" id="hombre" name="genero" value="hombre" >
+                <label for="Hombre">Hombre</label><br>
+                <input type="radio" name="genero" value="mujer" checked="checked">
+                <label for="mujer">Mujer</label><br>
+                 <input type="radio" name="genero" value="otror" checked="checked">
+                <label for="otro">Otro</label><br>
+                <input type="radio" name="genero" value="no contesta" checked="checked">
+                <label for="noContesta">Prefiero no contestar</label>
+                <br><br>
+                <!-- Campo para la fecha de nacimiento -->
+                <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+        
+        <!--Campo Pais de residencia-->
+        <label for="pais">Pais de residencia</label><br>
+        <select id="pais" name="pais">
+            <option value="" selected="selected">- Seleccione -</option>
+            
+           <option value="">--Selecciona un país--</option>
+      <option value="Argentina" >Argentina</option>
+      <option value="Brasil" >Brasil</option>
+      <option value="Canadá" >Canadá</option>
+      <option value="Chile" >Chile</option>
+      <option value="China" >China</option>
+      <option value="Colombia" >Colombia</option>
+      <option value="Egipto" >Egipto</option>
+      <option value="España" >España</option>
+      <option value="Estados Unidos" >Estados Unidos</option>
+      <option value="Francia" >Francia</option>
+      <option value="India" >India</option>
+      <option value="Italia" >Italia</option>
+      <option value="Japón" >Japón</option>
+      <option value="México" >México</option>
+      <option value="Perú" >Perú</option>
+      <option value="Reino Unido" >Reino Unido</option>
+      <option value="Rusia" >Rusia</option>
+      <option value="Sudáfrica" >Sudáfrica</option>
+      <option value="Tailandia" >Tailandia</option>
+      <option value="Turquía" >Turquía</option>
+        </select>
+        
+        
+        <!--Campo para correo-->
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="nombre" required><br><br>
+        <!--Campo para contraseña con excepcioenes-->
+         <label for="pass">Contraseña:</label><br>
+         <input type="password" id="pass" name="pass" required minlength="8" pattern="^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                title="La contraseña debe tener al menos 8 caracteres, incluir una mayúscula y un carácter especial como @, $, !, % o &" ><br><br>
+         <span id="error-pass" style="color: red; display: none;">La contraseña no cumple con los requisitos.</span>
+          <!--Campo para confirmar contraseña-->
+           <label for="confirm-Password">Confirma contraseña:</label><br>
+           <input type="password" id="confirm-password" name="confirm-password" required><br>  
+           <span id="error-message" style="color: red; display: none;">Las contraseñas no coinciden.</span>
+         <br>
+        
+        
+         <!-- finalizaremos con un checkbox para que el usuario acepte los terminos y 3 botones de acción para: guardar, borrar datos, y enviar -->
+            <label>
+                <input type="checkbox" id="terminos" name="terminos" required>
+                Acepto los términos y condiciones
+            </label>
+         <br><br>
+         <button type="submit" value="Enviar">Enviar</button><br>
+            
+             <!-- Pie de Página -->
+        <footer id="pie">
+            <p>&copy; 2025 Formularios HTML. Todos los derechos reservados.</p>
+        </footer>
+              </fieldset>
+        </form>
+    </body>
+</html>

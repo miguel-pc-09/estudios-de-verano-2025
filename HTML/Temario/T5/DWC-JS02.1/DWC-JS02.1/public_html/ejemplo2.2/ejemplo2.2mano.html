@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6</title>
+    <style>
+        span {
+            cursor: pointer; /* Cambia el cursor a una mano */
+            color: blue; /* Hace que el texto sea azul */
+            text-decoration: underline; /* Añade subrayado como un enlace */
+        }
+
+        span:hover {
+            color: darkblue; /* Cambia el color al pasar el ratón */
+        }
+    </style>
+    <script>
+        function Calcular_Area(b, a) {
+            alert((b * a) / 2);
+        }
+    </script>
+</head>
+
+<body>
+    <p>
+        <span onclick="Calcular_Area(3, 4);">Haz Click Aquí</span>
+    </p>
+</body>
+
+</html>

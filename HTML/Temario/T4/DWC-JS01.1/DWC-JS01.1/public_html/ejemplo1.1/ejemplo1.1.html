@@ -1,0 +1,69 @@
+<!DOCTYPE HTML> 
+<!--con esta etiqueta indicamos el tipo de documento que estamos creando, 
+en este caso, un archivo HTML, no tiene mayor explicación y no es obligatorio ponerla, 
+pero para seguir un ideal de buenas practicas es recomendable su uso.
+-->
+
+<html lang="es"> <!--con esta etiqueta iniciamos el código html, podemos observar también 
+que posee el atributo lang el cual nos permite especificar el idioma en el que va a estar escrita la página, 
+en este caso español (es), este atributo es opcional.
+    -->
+
+    <head>
+        <script src="scripts/ejemplo1.1.1.js">//como observamos la alerta esta cargada
+         //en el archivo main.js mediante src"scripts/ejemplo1.js"
+        </script> 
+        <title> Primer ejemplo de JavaScript </title>
+
+        <meta charset="utf-8"/>
+
+    </head>
+
+    <!--Dentro de la etiqueta head siempre pondremos información relevante para el navegador que generalmente no verán 
+    los usuarios al visualizar la página y en este caso nos encontramos con las siguientes etiquetas: La etiqueta <title> 
+    con la cual declaramos el titulo de nuestra página  y la etiqueta <meta> que posee el atributo charset = “utf-8” 
+    con el cual decimos al navegador que la codificación de los caracteres con la que escribimos es la UTF-8, 
+    solamente decir que al poner esta etiqueta con dicho atributo nos quitamos cualquier problema al escribir eñes, 
+    algunos acentos y letras del idioma español, esta ultima etiqueta es opcional.
+    -->
+
+    <body>
+
+        <h1> EJEMPLO 1.1 DE JAVASCRIPT </h1>
+
+        <p> 
+
+            <button type="button" onclick = "alert('Te dije que no me clickearas!!!')"> No me hagas click </button>
+
+        </p>
+
+    </body>
+
+    <!--Entre las etiquetas <body> se encuentra todo lo que mostraremos al usuario que este viendo la página, 
+    comenzamos con una etiqueta <h1> la cual se utiliza para poner un encabezado de gran tamaño a modo de titulo 
+    y luego nos encontramos con una etiqueta <p> con la cual abrimos un párrafo, dentro de esta etiqueta se encuentra 
+    lo importante de este ejemplo y la única parte de código JavaScript que es la etiqueta <button> con sus respectivos 
+    atributos por lo tanto analicemosla con mayor detenimiento.
+    
+    Al utilizar la etiqueta <button> creamos un botón en la página. Tener en cuenta que al crear un botón en html, 
+    este no hace nada salvo que lo configuremos para ello, esa configuración se realiza mediante el uso de los atributos 
+    type y onclick.
+
+    El atributo type es indispensable con su valor “button”, si queremos que nuestro botón realice lo que deseamos, 
+    es obligatorio su uso.
+    
+    El atributo onclick es un atributo de evento, con él podemos configurar el botón de forma que realice una acción u otra 
+    cuando el usuario haga click en él,  en este caso el valor del atributo onclick es la única porción de código JavaScript 
+    de todo el ejemplo.
+    
+
+    onclick = “alert ( ‘ Te dije que no me clickearas!!! ‘ )”
+
+    Su valor es la función predefinida de JavaScript alert() con la cual podemos mostrar un mensaje que aparecerá 
+    como un Pop Up . Lo que pongamos dentro de los paréntesis será el mensaje que se mostrará al usuario, ese mensaje 
+    debe ir entre comillas ya sean simples o dobles, en este caso he puesto simples ya que para el valor del atributo 
+    onclick he usado unas comillas dobles de forma que no se pueda causar ninguna confusión al navegador y todo funcione 
+    correctamente.
+    -->
+
+</html>

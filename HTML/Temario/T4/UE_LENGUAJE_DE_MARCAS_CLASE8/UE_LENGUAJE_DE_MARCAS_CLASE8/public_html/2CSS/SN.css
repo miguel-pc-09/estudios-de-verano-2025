@@ -1,0 +1,113 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor Principal */
+#contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabecera */
+#cabecera {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#logo h1 {
+    font-size: 2.5em;/*2.5em;, significa que el tamaño de la fuente será 2.5 veces*/
+    color: #d9534f;
+}
+
+#logo p {
+    font-style: italic;
+    color: #5a5a5a;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #d9534f;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Introducción, Historia, y Valores */
+#introduccion p {
+    text-align: center;
+}
+
+#valores ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+#valores li {
+    margin-bottom: 10px;
+}
+
+/* Equipo */
+#equipo {
+    text-align: center;
+}
+
+.tarjetas-equipo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tarjeta {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /*Si añado más tarjetas width: calc(25% - 20px); /* Ocupa el 25% del contenedor menos el gap */
+    width: 200px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);/*box-shadow aplica una sombra a un elemento*/
+    text-align: center;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.tarjeta h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.tarjeta p {
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Pie de Página */
+#pie {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+}

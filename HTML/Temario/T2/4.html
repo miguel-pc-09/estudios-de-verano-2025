@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Control de Video</title>
+    <style>
+        /* Estilos para simular el ajuste de brillo */
+        #videoContainer {
+            filter: brightness(1);
+            transition: filter 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h2>Control de Volumen y Brillo del Video</h2>
+
+    <div id="videoContainer">
+        <video id="miVideo" width="320" height="240" controls>
+            <source src="video/236893_small.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+
+    <h3>Ajustes de Video</h3>
+    <form>
+        <label for="volumen">Nivel de Volumen:</label>
+        <input type="range" id="volumen" min="0" max="1" step="0.1" value="1" oninput="ajustarVolumen()">
+        <span id="volDisplay">100%</span><br><br>
+
+        <label for="brillo">Nivel de Brillo:</label>
+        <input type="range" id="brillo" min="0" max="1" step="0.1" value="1" oninput="ajustarBrillo()">
+        <span id="brilloDisplay">100%</span><br><br>
+    </form>
+
+    <script>
+        // Función para ajustar el volumen del video
+        function ajustarVolumen() {
+            const video = document.getElementById("miVideo");
+            const volumen = document.getElementById("volumen").value;
+            video.volume = volumen;
+            document.getElementById("volDisplay").innerText = Math.round(volumen * 100) + "%";
+        }
+
+        // Función para ajustar el brillo del video
+        function ajustarBrillo() {
+            const brillo = document.getElementById("brillo").value;
+            document.getElementById("videoContainer").style.filter = `brightness(${brillo})`;
+            document.getElementById("brilloDisplay").innerText = Math.round(brillo * 100) + "%";
+        }
+    </script>
+</body>
+</html>

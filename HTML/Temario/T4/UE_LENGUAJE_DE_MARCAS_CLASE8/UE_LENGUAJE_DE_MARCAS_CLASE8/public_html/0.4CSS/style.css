@@ -1,0 +1,40 @@
+/* Estilo general del formulario */
+body {
+    font-family: Arial, sans-serif; /* Fuente principal será Arial. Si no está disponible, usa una fuente genérica sans-serif. */
+    margin: 100px;                  /* Margen de 100px alrededor del contenido (superior, inferior, izquierdo y derecho). */
+    background-color: #d2d0d0;      /* Color de fondo gris claro para toda la página. */
+}
+
+h1 {
+    text-align: center;             /* Centra horizontalmente el título (h1). */
+    color: #e137d4;                 /* Aplica un color magenta brillante al texto del título. */
+}
+
+form {
+    max-width: 400px;               /* Define un ancho máximo de 400px para el formulario. */
+    margin: 0 auto;                 /* Centra el formulario horizontalmente dentro del contenedor. */
+    padding: 15px;                  /* Añade un espacio interno de 15px dentro del formulario. */
+    border: 1px solid #ccc;         /* Aplica un borde gris claro alrededor del formulario. */
+    border-radius: 10px;             /* Redondea las esquinas del borde del formulario. */
+    background-color: #fff;         /* Fondo blanco para el formulario. */
+}
+
+
+input, select, textarea {
+    width: 100%;                    /* Hace que los campos ocupen el 100% del ancho del formulario. */
+    padding: 10px;                  /* Añade un espacio interno de 8px dentro de los campos. */
+    margin-bottom: 10px;            /* Espaciado de 10px debajo de cada campo para separación vertical. */
+    border: 1px solid #000000;      /* Aplica un borde negro alrededor de los campos. */
+    border-radius: 3px;             /* Redondea ligeramente las esquinas de los campos. */
+    box-sizing: border-box;         /* Incluye el padding y el borde dentro del ancho y alto especificados. */
+}
+
+input[type="submit"] {
+    width: 100%;                    /* Hace que el botón de envío ocupe todo el ancho del formulario. */
+    background-color: #4CAF50;      /* Aplica un color verde al fondo del botón. */
+    color: white;                   /* Cambia el color del texto del botón a blanco. */
+    border: none;                   /* Elimina cualquier borde del botón. */
+    padding: 10px;                  /* Añade un espacio interno de 10px dentro del botón. */
+    cursor: pointer;                /* Cambia el cursor a "mano" cuando se pasa sobre el botón. */
+}
+

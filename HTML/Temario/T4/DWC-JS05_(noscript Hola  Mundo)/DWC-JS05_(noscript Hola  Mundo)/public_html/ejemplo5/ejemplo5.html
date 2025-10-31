@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Profesor : José David Ventura Roldán
+DWC Ejercicio 5- Tema 1
+La etiqueta <noscript> permite definir qué texto proporcionar al
+usuario cuando el navegador no soporta o no tiene activado
+JavaScript
+Esta etiqueta tiene que ir dentro del <body>
+<noscript><p>Esta página requiere JavaScript para su correcto funcionamiento.
+Compruebe si JavaScript está deshabilitado en el navegador.</p>
+</noscript>
+
+-->
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 5 - Tema 1 (Hola Mundo)</title>
+    </head>
+    <body>
+        <h1>T1 - Ejercicio 5</h1>
+        
+        <noscript>
+            <p>Esta página requiere JavaScript para su correcto funcionamiento.
+            Compruebe si JavaScript está deshabilitado en el navegador.</p>
+        </noscript>
+
+        <p>Un script con la frase más famosa de la programación.</p>
+
+        <!-- Carga el script correctamente asegurando que se ejecute después de que el DOM esté listo -->
+        <script src="scripts/ejemplo5.js" defer></script>
+    </body>
+</html>

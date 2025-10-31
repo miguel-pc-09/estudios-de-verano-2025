@@ -1,0 +1,92 @@
+/* 🔹 Fondo fijo para todas las páginas */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ocupa toda la pantalla */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* Fondo de la página */
+    background-image: url('images/cubos3d.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* La imagen cubrirá toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+}
+#contenedor-a{
+    text-align: center;
+    width: 80%;
+    padding: 40px 0;
+}
+/* 🔹 Título principal */
+h2 {
+    font-size: 32px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+/*Contenedor tarjetas*/
+.tarjetas-servicio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+/* 🔹 Estilo de cada tarjeta */
+.tarjeta-servicio{
+    background: #fff;
+    width: 220px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+/* 🔹 Imagen dentro de la tarjeta */
+.tarjeta-servicio img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+/* 🔹 Texto descriptivo */
+.tarjeta-servicio p {
+    color: #777;
+    font-size: 14px;
+}
+/* 🔹 Imagen en la parte superior */
+.tarjeta img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 5px;
+    position: absolute;
+    top: 40px;
+}
+/* 🔹 Título dentro de la tarjeta */
+.tarjeta-servicio h3 {
+    margin-top: 10px;
+    color: #333;
+    font-size: 18px;
+}
+/* 🔹 Texto descriptivo */
+.tarjeta p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+
+#pie {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    margin-top:30px;
+    width: 100%;
+}

@@ -1,0 +1,62 @@
+/* Estilo general del formulario */
+body {
+    background-image: url('images/cubos3d.jpg');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en la página */
+    font-family: Arial, sans-serif; /* Fuente principal será Arial. Si no está disponible, usa una fuente genérica sans-serif. */
+    margin: 100px;                  /* Margen de 100px alrededor del contenido (superior, inferior, izquierdo y derecho). */
+          /* Color de fondo gris claro para toda la página. */
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: #060606; /* Color del texto */
+    text-shadow: 
+        2px 2px 0px whit, 
+       -2px 2px 0px whit,
+        2px -2px 0px whit,
+       -2px -2px 0px whit; /* Define las sombras en 4 direcciones */
+    text-align: center;
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid gray;
+    border-radius: 5px;
+    background-color: #f8f7f7;
+}
+email{
+    text-align: center;
+}
+button {
+    background-color: #45a049; /* Verde predeterminado */
+    color: white; /* Texto blanco */
+    padding: 5px 200px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #6fcf65; 
+}
+
+/* Hace que todos los inputs, selects y botones tengan el mismo ancho */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+ 
+
+select {
+    width: calc(100% - 20px); /* Ajusta el ancho al 100% menos el padding */
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Evita que el padding afecte el ancho total */
+}
